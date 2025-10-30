@@ -9,4 +9,7 @@ export default function PeoplePage() {
       </CardHeader>
       <CardContent>
         <p>Member directory will be displayed here.</p>
-      
+      </CardContent>
+    </Card>
+  );
+}

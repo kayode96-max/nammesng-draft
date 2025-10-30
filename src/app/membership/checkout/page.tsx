@@ -17,6 +17,7 @@ export default function CheckoutPage() {
 
   const handlePayment = () => {
     // Simulate API call to payment gateway
+    setIsConfirming(true);
     setTimeout(() => {
       setIsConfirming(false);
       setIsSuccess(true);
@@ -42,7 +43,7 @@ export default function CheckoutPage() {
             </div>
           </CardContent>
           <CardFooter>
-            <Button className="w-full" onClick={() => setIsConfirming(true)}>
+            <Button className="w-full" onClick={() => handlePayment()}>
               <CreditCard className="mr-2 h-4 w-4" /> Pay Now
             </Button>
           </CardFooter>
@@ -93,3 +94,6 @@ export default function CheckoutPage() {
         </Dialog>
       </main>
       <SiteFooter />
+    </>
+  );
+}

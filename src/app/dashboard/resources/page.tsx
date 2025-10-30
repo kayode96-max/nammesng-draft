@@ -8,4 +8,8 @@ export default function ResourcesPage() {
         <CardDescription>Access academic papers, industry reports, and more.</CardDescription>
       </CardHeader>
       <CardContent>
-        <p>
+        <p>Resource materials will be displayed here.</p>
+      </CardContent>
+    </Card>
+  );
+}

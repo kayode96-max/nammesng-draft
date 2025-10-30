@@ -7,4 +7,9 @@ export default function NewsPage() {
         <CardTitle className="font-headline">News</CardTitle>
         <CardDescription>Latest updates and announcements from NAMMES.</CardDescription>
       </CardHeader>
-      
+      <CardContent>
+        <p>News content will be displayed here.</p>
+      </CardContent>
+    </Card>
+  );
+}

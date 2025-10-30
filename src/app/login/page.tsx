@@ -16,4 +16,10 @@ export default function LoginPage() {
               Enter your Certificate ID to access the portal.
             </CardDescription>
           </CardHeader>
-          <
+          <LoginForm />
+        </Card>
+      </main>
+      <SiteFooter />
+    </>
+  );
+}
