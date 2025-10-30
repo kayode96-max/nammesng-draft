@@ -1,3 +1,70 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "Abstract engineering design",
+      "imageUrl": "https://images.unsplash.com/photo-1731199182050-1d756bc921b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlbmdpbmVlcmluZyUyMGFic3RyYWN0fGVufDB8fHx8MTc2MTc5NjY1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "engineering abstract"
+    },
+    {
+      "id": "about",
+      "description": "Students collaborating on a project",
+      "imageUrl": "https://images.unsplash.com/photo-1566140967404-b8b3932483f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NjE3MzMwNzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "team collaboration"
+    },
+    {
+      "id": "feature1",
+      "description": "A preview of the member portal dashboard",
+      "imageUrl": "https://images.unsplash.com/photo-1691725909676-105654d24649?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkYXNoYm9hcmQlMjB1aXxlbnwwfHx8fDE3NjE3ODY3Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dashboard ui"
+    },
+    {
+      "id": "gallery1",
+      "description": "Image from a NAMMES conference",
+      "imageUrl": "https://images.unsplash.com/photo-1575029644286-efb9039cac46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb25mZXJlbmNlJTIwaGFsbHxlbnwwfHx8fDE3NjE3MTEyNDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "conference hall"
+    },
+    {
+      "id": "gallery2",
+      "description": "Students presenting their research",
+      "imageUrl": "https://images.unsplash.com/photo-1759456629070-8e222ab878ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzdHVkZW50JTIwcHJlc2VudGF0aW9ufGVufDB8fHx8MTc2MTc5NjY1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "student presentation"
+    },
+    {
+      "id": "gallery3",
+      "description": "Networking event at a NAMMES gathering",
+      "imageUrl": "https://images.unsplash.com/photo-1758525588945-51541e173e10?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwcm9mZXNzaW9uYWwlMjBuZXR3b3JraW5nfGVufDB8fHx8MTc2MTc5NjY1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional networking"
+    },
+    {
+      "id": "gallery4",
+      "description": "A materials science laboratory",
+      "imageUrl": "https://images.unsplash.com/photo-1605781645799-c9c7d820b4ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzY2llbmNlJTIwbGFib3JhdG9yeXxlbnwwfHx8fDE3NjE3NDQyOTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "science laboratory"
+    },
+    {
+      "id": "gallery5",
+      "description": "Group photo of NAMMES members",
+      "imageUrl": "https://images.unsplash.com/photo-1549341100-8c1a030b349b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxncm91cCUyMHBob3RvfGVufDB8fHx8MTc2MTc5MDE5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "group photo"
+    },
+    {
+      "id": "gallery6",
+      "description": "An industrial visit to a steel plant",
+      "imageUrl": "https://images.unsplash.com/photo-1622534376374-fe4480328daa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmR1c3RyaWFsJTIwcGxhbnR8ZW58MHx8fHwxNzYxNzUyMzk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "industrial plant"
+    },
+    {
+      "id": "user-avatar-1",
+      "description": "Avatar for a male user",
+      "imageUrl": "https://images.unsplash.com/photo-1522556189639-b150ed9c4330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjE3NTYzNjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "user-avatar-2",
+      "description": "Avatar for a female user",
+      "imageUrl": "https://images.unsplash.com/photo-1557053908-4793c484d06f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MTY5NjE0NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    }
+  ]
 }
