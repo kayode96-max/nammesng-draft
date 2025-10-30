@@ -22,12 +22,12 @@ export default function Home() {
               src={heroImage.imageUrl}
               alt={heroImage.description}
               fill
-              className="object-cover -z-10 brightness-50"
+              className="object-cover -z-10 brightness-[.4]"
               priority
               data-ai-hint={heroImage.imageHint}
             />
           )}
-          <div className="container px-4 md:px-6 text-white">
+          <div className="container px-4 md:px-6 text-white animate-fade-in-up">
             <div className="max-w-3xl mx-auto space-y-4">
               <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
                 Advancing Materials and Metallurgical Engineering in Nigeria
@@ -54,7 +54,7 @@ export default function Home() {
               </p>
             </div>
             <div className="mx-auto grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
-              <div className="grid gap-1 text-center">
+              <div className="grid gap-1 text-center transition-all hover:scale-105">
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground mb-4">
                   <Users className="h-8 w-8" />
                 </div>
@@ -63,7 +63,7 @@ export default function Home() {
                   Connect with peers, mentors, and industry leaders from across Nigeria. Build relationships that last a lifetime.
                 </p>
               </div>
-              <div className="grid gap-1 text-center">
+              <div className="grid gap-1 text-center transition-all hover:scale-105">
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground mb-4">
                   <BookOpen className="h-8 w-8" />
                 </div>
@@ -72,7 +72,7 @@ export default function Home() {
                   Gain access to a curated library of academic papers, industry reports, and career development materials.
                 </p>
               </div>
-              <div className="grid gap-1 text-center">
+              <div className="grid gap-1 text-center transition-all hover:scale-105">
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground mb-4">
                   <Briefcase className="h-8 w-8" />
                 </div>
@@ -85,7 +85,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
+        <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-muted/30">
           <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">About NAMMES NG</h2>
@@ -119,7 +119,7 @@ export default function Home() {
                 alt={aboutImage.description}
                 width={600}
                 height={400}
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
+                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last transition-all hover:scale-105"
                 data-ai-hint={aboutImage.imageHint}
               />
             )}

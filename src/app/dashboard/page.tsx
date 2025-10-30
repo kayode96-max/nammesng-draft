@@ -25,7 +25,7 @@ export default function Dashboard() {
         <h1 className="text-lg font-semibold md:text-2xl font-headline">Welcome, Member!</h1>
       </div>
       <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
-        <Card>
+        <Card className="transition-all hover:shadow-lg">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Membership Status</CardTitle>
             <Users className="h-4 w-4 text-muted-foreground" />
@@ -35,7 +35,7 @@ export default function Dashboard() {
             <p className="text-xs text-muted-foreground">Expires on Dec 31, 2024</p>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="transition-all hover:shadow-lg">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">New Resources</CardTitle>
             <Library className="h-4 w-4 text-muted-foreground" />
@@ -45,7 +45,7 @@ export default function Dashboard() {
             <p className="text-xs text-muted-foreground">in the last 30 days</p>
           </CardContent>
         </Card>
-        <Card className="lg:col-span-1">
+        <Card className="lg:col-span-1 transition-all hover:shadow-lg">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Recent News</CardTitle>
             <Newspaper className="h-4 w-4 text-muted-foreground" />
@@ -57,7 +57,7 @@ export default function Dashboard() {
         </Card>
       </div>
       <div className="grid gap-4 md:gap-8 lg:grid-cols-2 xl:grid-cols-3">
-        <Card className="xl:col-span-2">
+        <Card className="xl:col-span-2 transition-all hover:shadow-lg">
           <CardHeader className="flex flex-row items-center">
             <div className="grid gap-2">
               <CardTitle>Recent Activity</CardTitle>
@@ -119,7 +119,7 @@ export default function Dashboard() {
             </Table>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="transition-all hover:shadow-lg">
             <CardHeader>
                 <CardTitle>Your Profile</CardTitle>
                 <CardDescription>Certificate ID: NAMMES-2024-0001</CardDescription>
@@ -128,7 +128,9 @@ export default function Dashboard() {
                 <p className="text-sm text-muted-foreground">
                     Your membership provides full access to all portal features. Keep your profile updated.
                 </p>
-                <Button>View Profile</Button>
+                <Button asChild>
+                  <Link href="/dashboard/profile">View Profile</Link>
+                </Button>
             </CardContent>
         </Card>
       </div>

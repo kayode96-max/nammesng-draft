@@ -5,6 +5,7 @@ import {
   Library,
   Newspaper,
   Users,
+  User,
 } from "lucide-react"
 import Link from "next/link";
 
@@ -24,6 +25,7 @@ import { UserNav } from "@/components/user-nav"
 
 const menuItems = [
   { href: "/dashboard", label: "Home", icon: LayoutGrid },
+  { href: "/dashboard/profile", label: "Profile", icon: User },
   { href: "/dashboard/news", label: "News", icon: Newspaper },
   { href: "/dashboard/resources", label: "Resources", icon: Library },
   { href: "/dashboard/people", label: "People", icon: Users },

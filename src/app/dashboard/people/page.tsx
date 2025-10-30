@@ -2,9 +2,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter }
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { placeholderImages } from "@/lib/placeholder-images";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const members = [
   {
+    id: "1",
     name: "Dr. Chinedu Okoro",
     title: "Senior Lecturer",
     institution: "University of Nigeria, Nsukka",
@@ -12,6 +14,7 @@ const members = [
     fallback: "CO",
   },
   {
+    id: "2",
     name: "Fatima Bello",
     title: "Final Year Student",
     institution: "Ahmadu Bello University, Zaria",
@@ -19,6 +22,7 @@ const members = [
     fallback: "FB",
   },
   {
+    id: "3",
     name: "Tunde Adebayo",
     title: "Materials Engineer",
     institution: "Dangote Cement",
@@ -26,6 +30,7 @@ const members = [
     fallback: "TA",
   },
   {
+    id: "4",
     name: "Aisha Ibrahim",
     title: "PhD Candidate",
     institution: "Federal University of Technology, Akure",
@@ -33,6 +38,7 @@ const members = [
     fallback: "AI",
   },
   {
+    id: "5",
     name: "Emeka Nwosu",
     title: "Quality Control Manager",
     institution: "Innoson Vehicle Manufacturing",
@@ -40,6 +46,7 @@ const members = [
     fallback: "EN",
   },
   {
+    id: "6",
     name: "Zainab Aliyu",
     title: "M.Eng Student",
     institution: "University of Lagos",
@@ -59,15 +66,15 @@ export default function PeoplePage() {
   }
 
   return (
-    <Card>
+    <Card className="overflow-hidden">
       <CardHeader>
         <CardTitle className="font-headline">Member Directory</CardTitle>
         <CardDescription>Connect with other NAMMES students, academics, and professionals.</CardDescription>
       </CardHeader>
       <CardContent className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {members.map((member) => (
-          <Card key={member.name}>
-            <CardContent className="flex flex-col items-center text-center p-6">
+          <Card key={member.name} className="flex flex-col transition-all hover:shadow-lg hover:-translate-y-1">
+            <CardContent className="flex flex-col items-center text-center p-6 flex-grow">
               <Avatar className="h-20 w-20 mb-4">
                 <AvatarImage src={getAvatarUrl(member.avatarId)} alt={member.name} />
                 <AvatarFallback>{member.fallback}</AvatarFallback>
@@ -77,7 +84,9 @@ export default function PeoplePage() {
               <p className="text-xs text-muted-foreground mt-1">{member.institution}</p>
             </CardContent>
             <CardFooter>
-              <Button variant="outline" className="w-full">View Profile</Button>
+              <Button variant="outline" className="w-full" asChild>
+                <Link href={`/dashboard/profile`}>View Profile</Link>
+              </Button>
             </CardFooter>
           </Card>
         ))}
