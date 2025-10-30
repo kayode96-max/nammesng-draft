@@ -6,6 +6,7 @@ import {
   Newspaper,
   Users,
 } from "lucide-react"
+import Link from "next/link";
 
 import { Logo } from "@/components/logo"
 import {
@@ -47,12 +48,13 @@ export default function DashboardLayout({
               {menuItems.map((item) => (
                 <SidebarMenuItem key={item.label}>
                   <SidebarMenuButton
-                    href={item.href}
                     asChild
                     tooltip={item.label}
                   >
-                    <item.icon />
-                    <span>{item.label}</span>
+                    <Link href={item.href}>
+                      <item.icon />
+                      <span>{item.label}</span>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
