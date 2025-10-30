@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -136,4 +135,8 @@ export default function MembershipForm() {
           <Button type="submit" className="w-full">
             Proceed to Payment
           </Button>
-        </
+        </CardFooter>
+      </form>
+    </Form>
+  )
+}

@@ -76,4 +76,8 @@ export default function LoginForm() {
           <Button variant="link" size="sm" asChild className="w-full">
             <Link href="/forgot-password">Forgot password?</Link>
           </Button>
-        </
+        </CardFooter>
+      </form>
+    </Form>
+  )
+}
