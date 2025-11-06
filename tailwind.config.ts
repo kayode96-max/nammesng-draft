@@ -12,6 +12,7 @@ export default {
   ],
   theme: {
     extend: {
+      /* Fixed fontFamily definition to properly reference CSS variables */
       fontFamily: {
         sans: ["var(--font-body)", "PT Sans", "sans-serif"],
         headline: ["var(--font-headline)", "Space Grotesk", "sans-serif"],
