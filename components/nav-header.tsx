@@ -17,17 +17,16 @@ export default function NavHeader({ isScrolled }: { isScrolled: boolean }) {
 
   return (
     <>
-      {/* Desktop Navigation */}
       <header
         className={`fixed top-0 w-full z-40 transition-all duration-500 ${
-          isScrolled ? "bg-background/80 backdrop-blur-xl border-b border-green-900/20 shadow-sm" : "bg-background"
+          isScrolled ? "bg-background/70 backdrop-blur-xl border-b border-green-900/20 shadow-lg" : "bg-background"
         }`}
       >
         <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo with enhanced hover effect */}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-0 group-hover:opacity-75 transition-opacity duration-500" />
               <div className="relative bg-black rounded-lg px-3 py-2">
                 <span className="text-green-500 font-headline font-bold text-xl">NM</span>
               </div>
@@ -38,7 +37,7 @@ export default function NavHeader({ isScrolled }: { isScrolled: boolean }) {
             </div>
           </Link>
 
-          {/* Desktop Menu */}
+          {/* Desktop Menu with improved animations */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
@@ -52,7 +51,7 @@ export default function NavHeader({ isScrolled }: { isScrolled: boolean }) {
             ))}
           </div>
 
-          {/* Auth Buttons */}
+          {/* Auth Buttons with better styling */}
           <div className="hidden lg:flex items-center gap-4">
             <Button
               variant="ghost"
@@ -60,7 +59,7 @@ export default function NavHeader({ isScrolled }: { isScrolled: boolean }) {
             >
               Login
             </Button>
-            <Button className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white shadow-lg hover:shadow-green-500/50 transition-all duration-300 hover:-translate-y-0.5">
+            <Button className="gradient-btn shadow-lg hover:shadow-green-500/50 transition-all duration-300 hover:-translate-y-0.5">
               Register Now
             </Button>
           </div>
@@ -74,7 +73,6 @@ export default function NavHeader({ isScrolled }: { isScrolled: boolean }) {
           </button>
         </nav>
 
-        {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden bg-background border-t border-green-900/20 animate-in fade-in slide-in-from-top-2 duration-300">
             <div className="px-6 py-4 space-y-3">
@@ -92,7 +90,7 @@ export default function NavHeader({ isScrolled }: { isScrolled: boolean }) {
                 <Button variant="outline" className="flex-1 bg-transparent">
                   Login
                 </Button>
-                <Button className="flex-1 bg-gradient-to-r from-green-600 to-green-500 text-white">Register</Button>
+                <Button className="flex-1 gradient-btn text-white">Register</Button>
               </div>
             </div>
           </div>

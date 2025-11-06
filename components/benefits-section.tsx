@@ -1,6 +1,7 @@
 "use client"
 
 import { CheckCircle2 } from "lucide-react"
+import { useEffect, useState } from "react"
 
 const benefitGroups = [
   {
@@ -33,15 +34,31 @@ const benefitGroups = [
 ]
 
 export default function BenefitsSection() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
   return (
-    <section id="benefits" className="py-20 bg-black/20 backdrop-blur-sm border-y border-green-900/20">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center space-y-4 mb-16">
+    <section
+      id="benefits"
+      className="relative py-20 bg-black/20 backdrop-blur-sm border-y border-green-900/20 overflow-hidden"
+    >
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/3 right-0 w-96 h-96 bg-gradient-to-l from-green-600/5 to-transparent rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-gradient-to-r from-green-500/5 to-transparent rounded-full blur-3xl animate-pulse animation-delay-2000" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6">
+        <div
+          className={`text-center space-y-4 mb-16 transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+        >
           <h2 className="font-headline text-4xl md:text-5xl font-bold text-foreground">
             Tailored Benefits for
-            <span className="block bg-gradient-to-r from-green-500 to-emerald-400 bg-clip-text text-transparent">
-              Every Professional
-            </span>
+            <span className="block gradient-text">Every Professional</span>
           </h2>
         </div>
 
@@ -49,9 +66,11 @@ export default function BenefitsSection() {
           {benefitGroups.map((group, idx) => (
             <div
               key={group.title}
-              className="p-6 rounded-xl border border-green-900/30 bg-gradient-to-br from-green-900/10 to-transparent hover:border-green-500/50 transition-all duration-300 group hover:shadow-lg hover:shadow-green-500/10"
+              className={`p-6 rounded-xl border border-green-900/30 bg-gradient-to-br from-green-900/10 to-transparent hover:border-green-500/50 transition-all duration-300 group hover:shadow-lg hover:shadow-green-500/10 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
               style={{
-                animation: `fadeInUp 0.6s ease-out ${idx * 100}ms both`,
+                transitionDelay: `${idx * 100}ms`,
               }}
             >
               <h3 className="font-headline text-2xl font-bold text-foreground mb-6 group-hover:text-green-500 transition-colors duration-300">
@@ -61,13 +80,14 @@ export default function BenefitsSection() {
                 {group.benefits.map((benefit, bidx) => (
                   <li
                     key={benefit}
-                    className="flex items-start gap-3 group/item"
+                    className="flex items-start gap-3 group/item transition-all duration-300"
                     style={{
-                      animation: `slideInLeft 0.5s ease-out ${300 + bidx * 75}ms both`,
+                      animation: isVisible ? `slideInFromLeft 0.5s ease-out ${300 + bidx * 75}ms forwards` : "none",
+                      opacity: isVisible ? 1 : 0,
                     }}
                   >
                     <CheckCircle2
-                      className="text-green-500 flex-shrink-0 mt-0.5 group-hover/item:scale-110 transition-transform duration-300"
+                      className="text-green-500 flex-shrink-0 mt-0.5 group-hover/item:scale-110 group-hover/item:text-emerald-400 transition-all duration-300"
                       size={20}
                     />
                     <span className="text-foreground group-hover/item:text-green-400 transition-colors duration-300">
@@ -80,30 +100,6 @@ export default function BenefitsSection() {
           ))}
         </div>
       </div>
-
-      <style>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes slideInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-      `}</style>
     </section>
   )
 }

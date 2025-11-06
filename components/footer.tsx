@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react"
+import { useEffect, useState } from "react"
 
 const footerLinks = {
   Product: [
@@ -22,13 +23,27 @@ const footerLinks = {
 }
 
 export default function Footer() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
   return (
-    <footer className="relative bg-black/40 backdrop-blur-sm border-t border-green-900/20">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+    <footer className="relative bg-black/40 backdrop-blur-sm border-t border-green-900/20 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-l from-green-600/5 to-transparent rounded-full blur-3xl animate-pulse animation-delay-2000" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6 py-16">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-5 gap-8 mb-12">
-          {/* Brand */}
-          <div className="md:col-span-1 space-y-4">
+          {/* Brand with enhanced animation */}
+          <div
+            className={`md:col-span-1 space-y-4 transition-all duration-700 ${
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+            }`}
+          >
             <Link href="/" className="flex items-center gap-2 group">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -40,9 +55,15 @@ export default function Footer() {
             <p className="text-sm text-muted-foreground">Advancing materials science and engineering across Nigeria.</p>
           </div>
 
-          {/* Links */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category} className="space-y-4">
+          {/* Links with staggered animation */}
+          {Object.entries(footerLinks).map(([category, links], idx) => (
+            <div
+              key={category}
+              className={`space-y-4 transition-all duration-700 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: `${(idx + 1) * 100}ms` }}
+            >
               <h4 className="font-headline font-semibold text-foreground">{category}</h4>
               <ul className="space-y-2">
                 {links.map((link) => (
@@ -64,26 +85,36 @@ export default function Footer() {
         <div className="pt-8 border-t border-green-900/20 space-y-6">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Contact */}
-            <div className="space-y-3">
+            <div
+              className={`space-y-3 transition-all duration-700 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: "400ms" }}
+            >
               <h4 className="font-headline font-semibold text-foreground mb-4">Get in Touch</h4>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2 hover:text-green-500 transition-colors duration-300">
-                  <Mail size={16} />
+                <div className="flex items-center gap-2 hover:text-green-500 transition-colors duration-300 group">
+                  <Mail size={16} className="group-hover:scale-110 transition-transform" />
                   <a href="mailto:info@nammes.ng">info@nammes.ng</a>
                 </div>
-                <div className="flex items-center gap-2 hover:text-green-500 transition-colors duration-300">
-                  <Phone size={16} />
+                <div className="flex items-center gap-2 hover:text-green-500 transition-colors duration-300 group">
+                  <Phone size={16} className="group-hover:scale-110 transition-transform" />
                   <a href="tel:+2348000000000">+234 800 000 0000</a>
                 </div>
-                <div className="flex items-center gap-2 hover:text-green-500 transition-colors duration-300">
-                  <MapPin size={16} />
+                <div className="flex items-center gap-2 hover:text-green-500 transition-colors duration-300 group">
+                  <MapPin size={16} className="group-hover:scale-110 transition-transform" />
                   <span>Lagos, Nigeria</span>
                 </div>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="space-y-3">
+            <div
+              className={`space-y-3 transition-all duration-700 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: "500ms" }}
+            >
               <h4 className="font-headline font-semibold text-foreground mb-4">Follow Us</h4>
               <div className="flex gap-4">
                 {[
@@ -94,9 +125,9 @@ export default function Footer() {
                   <a
                     key={label}
                     href="#"
-                    className="p-2 rounded-lg bg-green-900/20 border border-green-900/40 hover:border-green-500/50 text-green-500 hover:bg-green-500/10 transition-all duration-300 group"
+                    className="p-2 rounded-lg bg-green-900/20 border border-green-900/40 hover:border-green-500/50 text-green-500 hover:bg-green-500/10 transition-all duration-300 group hover:scale-110"
                   >
-                    <Icon size={20} className="group-hover:scale-110 transition-transform" />
+                    <Icon size={20} className="group-hover:rotate-12 transition-transform" />
                   </a>
                 ))}
               </div>
@@ -104,7 +135,12 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="pt-8 border-t border-green-900/20 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+          <div
+            className={`pt-8 border-t border-green-900/20 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground transition-all duration-700 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+            style={{ transitionDelay: "600ms" }}
+          >
             <p>&copy; 2025 NAMMES NG. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-green-500 transition-colors duration-300">
