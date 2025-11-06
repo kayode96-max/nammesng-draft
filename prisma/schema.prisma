@@ -1,0 +1,91 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String    @id @default(uuid())
+  name           String
+  email          String    @unique
+  phone          String?
+  institution    String?
+  certificateId  String?   @unique
+  passwordHash   String
+  role           String    @default("member")
+  isTempPassword Boolean   @default(true)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  certificates   Certificate[]
+}
+
+model Certificate {
+  id             String   @id @default(uuid())
+  certificateId  String   @unique
+  userId         String
+  fullName       String
+  issueDate      DateTime @default(now())
+  pdfUrl         String
+  signedUrlExpiry Int
+  qrCodeData     String
+  templateVersion String?
+  createdAt      DateTime @default(now())
+  user           User     @relation(fields: [userId], references: [id])
+}
+
+model Payment {
+  id                 String   @id @default(uuid())
+  provider           String
+  providerPaymentId  String   @unique
+  amount             Int
+  currency           String
+  status             String
+  userId             String?
+  certificateId      String?
+  metadata           String?
+  createdAt          DateTime @default(now())
+}
+
+model BlogPost {
+  id          String   @id @default(uuid())
+  title       String
+  slug        String   @unique
+  content     String
+  authorId    String?
+  publishedAt DateTime?
+  tags        String?
+  imageUrl    String?
+}
+
+model Resource {
+  id         String   @id @default(uuid())
+  title      String
+  fileUrl    String
+  category   String?
+  uploadedBy String?
+  uploadedAt DateTime @default(now())
+}
+
+model Internship {
+  id          String   @id @default(uuid())
+  company     String
+  location    String
+  field       String
+  year        Int
+  submittedBy String?
+  approved    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
+
+model ContactMessage {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  subject   String?
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
